@@ -8,7 +8,7 @@
  * The URL or reference to your projects logo!
  * @type {string}
  */
-const logo = 'img/StoryQuest_fixed.png'; 
+const logo = '/img/Logo-Red-Transparent.svg';
 
 const main_template_jira_scripts = () => {
   if (process.env.ORG_NAME === 'ApplebaumIan'){
@@ -28,8 +28,8 @@ const title = "StoryQuest"
   .split(' ')
   .map(word => {
     // Make sure the word has at least one character
-    return word.length > 0 
-      ? word[0].toUpperCase() + word.substring(1) 
+    return word.length > 0
+      ? word[0].toUpperCase() + word.substring(1)
       : '';
   })
   .join(' ');
@@ -144,8 +144,9 @@ const config = {
       },
       footer: {
         logo: {
-          alt: 'My Site Logo',
-          src: logo,
+          alt: 'Temple Human Computer Interaction Lab logo',
+          src: '/img/Full-Name-HCI-Logo-Lightmode.svg',
+          srcDark: '/img/White-Secondary-Logo.svg',
         },
         links: [
           {
@@ -184,7 +185,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ${title}, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Temple University Human-Computer Interaction Lab. Built with Docusaurus.`,
       },
       // prism: {
       //   theme: lightCodeTheme,
@@ -215,6 +216,13 @@ const config = {
         routeBasePath: 'tutorial',
         sidebarPath: require.resolve('./sidebars.js'),
         // ... other options
+      },
+    ],
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-NVETSR1YJS',
+        anonymizeIP: true,
       },
     ],
     [
